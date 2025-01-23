@@ -17,10 +17,11 @@ function binarySearch(list, element) {
         else if(element < list[mid]) {
             list = list.slice(0, mid);
         }
-        else {
+        else if(element > list[mid]) {
             index+=mid+1;
             list = list.slice(mid+1, list.length);
         }
+        else {break;}
     }
         return -1;
 }
