@@ -2,7 +2,7 @@ function binarySearch(list, element) {
     var mid,
     index = 0;
 
-    while(list.length != 0) {
+    while(list.length > 0) {
         //Find middle index
         if(list.length%2 == 1) {
             mid = (list.length-1)/2;
@@ -17,11 +17,10 @@ function binarySearch(list, element) {
         else if(element < list[mid]) {
             list = list.slice(0, mid);
         }
-        else if(element > list[mid]) {
+        else {
             index+=mid+1;
             list = list.slice(mid+1, list.length);
         }
-        else {break;}
     }
         return -1;
 }
