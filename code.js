@@ -9,17 +9,18 @@ function binarySearch(list, element) {
         }
         else {mid = list.length/2-1;}
 
-        //Search list
-        if(element == list[mid]) {
-            index+=mid;
+        /*Search list
+        Making sure that the list length goes to 1 
+        ensures the first instance of the element is returned. */
+        if(list.length == 1 && element == list[mid]) {
             return index;
         }
-        else if(element < list[mid]) {
-            list = list.slice(0, mid);
-        }
-        else {
+        else if(element > list[mid]) {
             index+=mid+1;
             list = list.slice(mid+1, list.length);
+        }
+        else {
+            list = list.slice(0, mid + 1);
         }
     }
         return -1;
